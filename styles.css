@@ -1,8 +1,8 @@
 .navbar {
     background-color: mediumseagreen;
     overflow: hidden;
-    width: auto;
-    height: auto;
+    width: 100vw;
+    position: fixed;
 }
 .left{
     float: left;
@@ -39,15 +39,84 @@
 }
 img{
     float: right;
+    margin-right: 30px;
     max-width: 50px;
     max-height: 50px;
 }
 .article{
-    width: 25%;
-    border: 1px solid #618b5f;
+    padding: 10px;
+    border-radius: 25px;
+    background-color:  #618b5f;
     margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 100px;
+    float: left;
+    width: 25%;
+    text-align: center;
+    object-fit: fill;
 }
 #feedb{
     width: 200px;
     height: 200px;
+}
+footer{
+    width: 100vw;
+    padding: 16px;
+    background-color: #260d0d;
+    margin-top: 200px;
+    color: white;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    width: 33%; /* Three columns, each taking up one-third of the container */
+    padding: 10px;
+    border-radius: 25px;
+
+
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+    .column {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .column {
+        width: 100%;
+    }
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #599659;
+}
+@media print {
+    table{display:  none;}
+}
+.feedback{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.badge {
+    background-color: red;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 5px;
 }
