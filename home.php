@@ -1,3 +1,6 @@
+<?php
+include "navbar.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,28 +11,7 @@
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="home.html">My Restaurant</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contact.php">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="blog.html">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="services.html">Services</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+
     <div id="short-desc">
         <h1>Short description</h1>
         <p>This restaurant does not exist and will never exist because I have no idea what to write about, so I just make stuff up along the way.</p>
@@ -40,8 +22,7 @@
         <p>This restaurant was created yesterday for no reason whatsoever.</p>
         <p>It makes the best food that will never exist and will the best cover for money laundering.</p>
     </div>
-<footer>
-    test
-</footer>
+
 </body>
+<?php include "footer.php"; ?>
 </html>

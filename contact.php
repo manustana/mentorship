@@ -1,5 +1,10 @@
 <?php
+include 'navbar.php';
+
 $email = $_GET["email"] ?? "not@mail.com";
+$name = $_GET["fname"].$_GET["lname"] ?? "noname";
+$phone = $_GET["phone"] ?? "0000000000";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,35 +15,12 @@ $email = $_GET["email"] ?? "not@mail.com";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="home.html">My Restaurant</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="blog.html">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="services.html">Services</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+
 <h4>Contact us:</h4>
 <ul>
     <li>Email: <?=  $email;?></li>
-    <li>Phone: 0123456789</li>
-    <li>Google: Not A Real Restaurant</li>
-    <li>Facebook: Not A Real Restaurant</li>
-    <li>Address: 23121 No Street, City</li>
+    <li>Name: <?= $name;?></li>
+    <li>Phone: <?= $phone;?></li>
 </ul>
 <br>
 <br>
@@ -51,8 +33,8 @@ $email = $_GET["email"] ?? "not@mail.com";
     <input type="text" id="lname" name="lname"><br>
     <label for="email">Email:</label><br>
     <input type="email" id="email" name="email"><br>
-    <label for="feedb">Feedback:</label><br>
-    <input type="text" id="feedb" name="feedb"><br><br>
+    <label for="phone">Phone:</label><br>
+    <input type="text" id="phone" name="phone"><br><br>
     <div>
         <button id="submit" type="submit">Submit</button>
     </div>
@@ -72,4 +54,5 @@ $email = $_GET["email"] ?? "not@mail.com";
     // });
 </script>
 </body>
+<?php include "footer.php"; ?>
 </html>
