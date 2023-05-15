@@ -1,3 +1,6 @@
+<?php
+$email = $_GET["email"] ?? "not@mail.com";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +34,7 @@
 </nav>
 <h4>Contact us:</h4>
 <ul>
-    <li>Email: not@mail.com</li>
+    <li>Email: <?=  $email;?></li>
     <li>Phone: 0123456789</li>
     <li>Google: Not A Real Restaurant</li>
     <li>Facebook: Not A Real Restaurant</li>
@@ -40,7 +43,7 @@
 <br>
 <br>
 <div class="d-flex justify-content-center align-items-center">
-<form action="submit">Tell us what you think about our restaurant!
+<form action="">Tell us what you think about our restaurant!
     <br>
     <label for="fname">First name:</label><br>
     <input type="text" id="fname" name="fname"><br>
@@ -56,17 +59,17 @@
 </form>
 </div>
 <script>
-    const element = document.querySelector('form');
-    element.addEventListener('submit', event => {
-        event.preventDefault();
-        alert(document.querySelector("#fname").value + " " + document.querySelector("#lname").value + " " +
-            document.querySelector("#email").value + " "  + document.querySelector("#feedb").value);
-    });
-    document.body.addEventListener("mouseleave", function(event) {
-        if(event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight)) {
-            alert("I'm out");
-        }
-    });
+    // const element = document.querySelector('form');
+    // element.addEventListener('submit', event => {
+    //     event.preventDefault();
+    //     alert(document.querySelector("#fname").value + " " + document.querySelector("#lname").value + " " +
+    //         document.querySelector("#email").value + " "  + document.querySelector("#feedb").value);
+    // });
+    // document.body.addEventListener("mouseleave", function(event) {
+    //     if(event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight)) {
+    //         alert("I'm out");
+    //     }
+    // });
 </script>
 </body>
 </html>
