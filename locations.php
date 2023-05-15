@@ -1,9 +1,12 @@
-<?php include "navbar.php";?>
+<?php
+include "navbar.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
@@ -16,7 +19,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <br>
-    <ul class="list-group" id="list"></ul>
+    <ul class="list-group" id="list" style="margin-bottom: 30px;"></ul>
 <script>
     async function getCitiesByName(city) {
         const response = await fetch("https://api.teleport.org/api/cities/?search=" + city);
