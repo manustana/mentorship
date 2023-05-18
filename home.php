@@ -1,5 +1,7 @@
 <?php
-include "navbar.php";
+    include "cookie.php";
+    include "logincode.php";
+    include "navbar.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,16 +14,14 @@ include "navbar.php";
 </head>
 <body>
 
-    <div id="short-desc">
-        <h1>Short description</h1>
-        <p>This restaurant does not exist and will never exist because I have no idea what to write about, so I just make stuff up along the way.</p>
-        <p>I will continue to put some filler text in here so that it doesn't look as empty as my idea pool.</p>
-    </div>
-    <div id="general-info">
-        <h1>General information</h1>
-        <p>This restaurant was created yesterday for no reason whatsoever.</p>
-        <p>It makes the best food that will never exist and will the best cover for money laundering.</p>
-    </div>
+<!--<div>--><?php //echo $msg ;
+////        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+////            echo '<div> Hello '.$_COOKIE['username'].'</div>';
+////        }
+////        else{
+////            echo '<div> You are not logged in yet. </div>';
+////        }
+//    ?><!--</div>-->
 
 </body>
 <?php include "footer.php"; ?>

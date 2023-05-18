@@ -1,5 +1,9 @@
 <?php
-include "navbar.php";
+    include "logincode.php";
+    if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+        header('location: home.php');
+    }
+    include "navbar.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

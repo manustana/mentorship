@@ -1,9 +1,18 @@
 <?php
-include 'navbar.php';
-
-$email = $_GET["email"] ?? "not@mail.com";
-$name = $_GET["fname"].$_GET["lname"] ?? "noname";
-$phone = $_GET["phone"] ?? "0000000000";
+    include "logincode.php";
+    include 'navbar.php';
+    $email = $_GET["email"] ?? "not@mail.com";
+    $name = $_GET["fname"]." ".$_GET["lname"] ?? "noname";
+    $phone = $_GET["phone"] ?? "0000000000";
+    $site = $_GET["site"] ?? "";
+    $isValidURL = preg_match("/^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$/", $site);
+    if(!$isValidURL){
+        $site = '<span style="color:red">URL not valid</span>';
+    }
+    $file = $_GET["file"];
+    if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+       header('location: home.php');
+   }
 
 ?>
 <!DOCTYPE html>
@@ -21,6 +30,7 @@ $phone = $_GET["phone"] ?? "0000000000";
     <li>Email: <?=  $email;?></li>
     <li>Name: <?= $name;?></li>
     <li>Phone: <?= $phone;?></li>
+    <li>Site: <?= $site;?></li>
 </ul>
 <br>
 <br>
@@ -34,12 +44,24 @@ $phone = $_GET["phone"] ?? "0000000000";
     <label for="email">Email:</label><br>
     <input type="email" id="email" name="email"><br>
     <label for="phone">Phone:</label><br>
-    <input type="text" id="phone" name="phone"><br><br>
+    <input type="text" id="phone" name="phone"><br>
+    <label for="site">Your site:</label><br>
+    <input type="text" id="site" name="site"><br><br>
     <div>
         <button id="submit" type="submit">Submit</button>
     </div>
 </form>
 </div>
+<br>
+<div class="d-flex justify-content-center align-items-center">
+    <form action="" enctype="multipart/form-data">
+        Select file to upload:
+        <input type="file" name="file" id="file">
+        <input type="submit" value="Upload Image" name="submit">
+    </form>
+</div>
+
+
 <script>
     // const element = document.querySelector('form');
     // element.addEventListener('submit', event => {
@@ -53,6 +75,9 @@ $phone = $_GET["phone"] ?? "0000000000";
     //     }
     // });
 </script>
+<?php
+    echo file_get_contents($file);
+?>
 </body>
 <?php include "footer.php"; ?>
 </html>
